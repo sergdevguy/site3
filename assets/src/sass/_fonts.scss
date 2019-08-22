@@ -41,5 +41,9 @@
 
 
 
-// Test font! Not exist.
-// @include font('Font name', 'Font-name', normal, 400, '../fonts/font/');
+@include font('GeometriaBold', 'Geometria-Bold', normal, 400, '../fonts/');
+@include font('HelveticaLight', 'Helvetica-Light', normal, 400, '../fonts/');
+@include font('HelveticaLightItalic', 'Helvetica-LightItalic', normal, 400, '../fonts/');
+@include font('HelveticaMedium', 'Helvetica-Medium', normal, 400, '../fonts/');
+@include font('HelveticaRoman', 'Helvetica-Roman', normal, 400, '../fonts/');
+@include font('RadioVolna', 'Radio-Volna', bold, 700, '../fonts/');

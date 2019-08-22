@@ -1,0 +1,63 @@
+ul, li{
+    display: inline-block;
+}
+
+h1,h2,button,p{
+    margin: 0;
+}
+
+i{
+    background-color: $firmColor;
+    
+}
+
+.big-button{
+    background-image: url("../img/big_button_bg.png");
+    background-color: rgba(255, 255, 255, 0);
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    width: 269px;
+    height: 85px;
+}
+
+body{
+    color: $firmColor2;
+}
+
+
+
+
+header {
+    background-image: url("../img/1_bg.jpg");
+    background-repeat: no-repeat;
+    padding-bottom: 200px;
+
+    .main-h{
+        font-family: RadioVolna;
+        font-size: 115px;
+        line-height: 115px;
+    }
+
+    .subtitle{
+        font-size: 24px;
+    }
+
+    .big-button{
+        margin-top: 46px;
+        margin-bottom: 76px;
+    }
+
+    nav{
+        display: flex;
+        justify-content: space-between;
+        padding: 66px 0;
+    }
+
+    .datail{
+        font-family: HelveticaMedium;
+        font-size: 24px;
+        color: $firmColor;
+    }
+}
