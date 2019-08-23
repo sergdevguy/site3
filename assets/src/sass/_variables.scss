@@ -7,3 +7,14 @@ $firmColor3: #9eb1cf;
 $firmColor-hover: #f2cb05;
 
 $firmColor-bg: #f4f4f4f4;
+
+
+
+
+// Переопределили максимальную ширину контейнера Bootstrap4
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1170px
+);
