@@ -22,7 +22,7 @@ li:last-child .icon-circle{
 }
 
 .big-button{
-    background-image: url("../img/big_button_bg.png");
+    background-image: url("../img/big_button_bg_2.png");
     background-color: rgba(255, 255, 255, 0);
     color: #ffffff;
     font-weight: bold;
@@ -30,6 +30,10 @@ li:last-child .icon-circle{
     border: none;
     width: 269px;
     height: 85px;
+
+    &:hover{
+        background-position: right 0;
+    }
 }
 
 body{
@@ -298,15 +302,19 @@ header {
         }
 
         .small-button{
-            background-image: url("../img/small_button_bg.png");
+            background-image: url("../img/small_button_bg_2.png");
             background-color: rgba(255, 255, 255, 0);
             background-repeat: no-repeat;
-            background-position: center center;
-            background-size: contain;
+            background-position: left center;
+            background-size: auto;
             width: 54px;
             height: 50px;
             border: none;
             margin-left: 22px;
+
+            &:hover{
+                background-position: right 0;
+            }
 
             img{
                 padding-right: 0;
@@ -337,6 +345,15 @@ header {
         font-size: 30px;
         color: $firmColor;
         line-height: 40px;
+        margin-top: 40px;
+    }
+
+    .form-block{
+        background-image: url("../img/form-bg.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        padding: 40px 50px;
     }
 
     .main-form{
@@ -365,7 +382,17 @@ header {
             font-size: 16px;
 
             &::placeholder{
-                opacity: .1;
+                opacity: .4;
+                font-size: 16px;
+            }
+
+            &:nth-child(2){
+                margin-top: 70px;
+            }
+
+            &:nth-child(3){
+                margin-top: 50px;
+                margin-bottom: 50px;
             }
         }
 
@@ -377,6 +404,7 @@ header {
         .form-header-info{
             font-family: HelveticaLight;
             font-size: 16px;
+            margin-bottom: 50px;
         }
     }
 
