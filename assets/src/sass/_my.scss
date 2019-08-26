@@ -51,6 +51,7 @@ a:hover{
     font-size: 85px;
     text-align: center;
     width: 100%;
+    line-height: 115px;
 }
 
 .wrapper-gray{
@@ -254,4 +255,129 @@ header {
     .block-right{
         float: right;
     }
+}
+
+
+
+
+.comments{
+    position: relative;
+
+    .section-header-full{
+        margin-bottom: 40px;
+    }
+
+    img{
+        padding-right: 37px;
+    }
+
+    .name{
+        font-family: HelveticaMedium;
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    .text{
+        font-family: HelveticaLightItalic;
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .button-line{
+        position: absolute;
+        bottom: 0;
+        right: 15px;
+        display: flex;
+        align-items: center;
+
+        p,button{
+            display: inline-block;
+        }
+        .help-info{
+            font-size: 16px;
+            color: #9d9999;
+        }
+
+        .small-button{
+            background-image: url("../img/small_button_bg.png");
+            background-color: rgba(255, 255, 255, 0);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+            width: 54px;
+            height: 50px;
+            border: none;
+            margin-left: 22px;
+
+            img{
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+
+
+
+.cost{
+    .section-header{
+        font-size: 60px;
+        font-family: RadioVolna;
+        font-weight: 300;
+        line-height: 70px;
+        margin-top: 50px;
+
+        .price{
+            font-size: 72px;
+            font-family: HelveticaMedium;
+            color: $firmColor;
+        }
+    }
+    .info{
+        font-family: HelveticaMedium;
+        font-size: 30px;
+        color: $firmColor;
+        line-height: 40px;
+    }
+
+    .main-form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 25px 65px;
+        max-width: 516px;
+        background-color: #fff;
+        width: 100%;
+
+        fieldset{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        input{
+            width: 100%;
+            text-align: center;
+            border: none;
+            border-bottom: 1px solid #000;
+            font-size: 16px;
+
+            &::placeholder{
+                opacity: .1;
+            }
+        }
+
+        .form-header{
+            font-family: HelveticaLight;
+            font-size: 30px;
+        }
+    
+        .form-header-info{
+            font-family: HelveticaLight;
+            font-size: 16px;
+        }
+    }
+
 }
