@@ -234,11 +234,22 @@ header {
 
 
 .youLearn{
-    .block{
-        width: 50%;
+    .blockFull{
+        width: 100%;
+        display: inline-block;
+        padding: 30px 0;
     }
-    .block-left{
-        float: left;
+    .blockHalf{
+        width: 50%;
+
+        .text{
+            max-width: 390px;
+            font-family: HelveticaLight;
+            font-size: 22px;
+        }
+        .icon{
+            margin-bottom: 30px;
+        }
     }
     .block-right{
         float: right;
