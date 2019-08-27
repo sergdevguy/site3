@@ -1,5 +1,7 @@
 ul, li{
     display: inline-block;
+    padding: 0;
+    margin: 0;
 }
 
 h1,h2,button,p,ul{
@@ -16,6 +18,7 @@ h1,h2,button,p,ul{
     align-items: center;
     justify-content: center;
     margin-right: 15px;
+    font-size: 20px;
 }
 li:last-child .icon-circle{
     margin-right: 0;
@@ -36,7 +39,7 @@ li:last-child .icon-circle{
     }
 }
 
-body{
+body, a{
     color: $firmColor2;
 }
 
@@ -302,11 +305,9 @@ header {
         }
 
         .small-button{
-            background-image: url("../img/small_button_bg_2.png");
+            background-image: url("../img/small_button_bg_small.png");
             background-color: rgba(255, 255, 255, 0);
             background-repeat: no-repeat;
-            background-position: left center;
-            background-size: auto;
             width: 54px;
             height: 50px;
             border: none;
@@ -408,4 +409,67 @@ header {
         }
     }
 
+}
+
+
+
+
+footer{
+    position: relative;
+
+    .img-container{
+        position: relative;
+
+        img{
+            position: absolute;
+            width: 40%;
+            max-width: 877px;
+            left: 60%;
+        }
+    }
+
+    .section-header{
+        font-weight: 300;
+        line-height: 50px;
+        font-size: 60px;
+        font-family: RadioVolna;
+        margin-bottom: 50px;
+    }
+
+    .main-contacts{
+        font-family: HelveticaLight;
+        font-size: 18px;
+    }
+    .main-contacts li{
+        display: block;
+        padding-left: 42px;
+        margin-bottom: 14px;
+
+        &:nth-child(1){
+            background-image: url("../img/footer-icon-phone.png");
+            background-repeat: no-repeat;
+            background-position: 2px 0;
+        }
+        &:nth-child(2){
+            background-image: url("../img/footer-icon-email.png");
+            background-repeat: no-repeat;
+        }
+        &:nth-child(3){
+            background-image: url("../img/footer-icon-adress.png");
+            background-repeat: no-repeat;
+            background-position: 5px 0;
+        }
+        &:nth-child(4){
+            background-image: url("../img/footer-icon-time.png");
+            background-repeat: no-repeat;
+            background-position: 1px 0;
+        }
+    }
+    .footer-icons{
+        margin-top: 40px;
+        
+        .icon-circle{
+            background-color: $firmColor3;
+        }
+    }
 }
