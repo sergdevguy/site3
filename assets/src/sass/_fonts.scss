@@ -31,10 +31,10 @@
         font-weight: $f-weight;
         src: local($f-name), 
              local($f-name-another-var),
-             url($f-url + $f-name + '.woff2') format('woff2'),
-             url($f-url + $f-name + '.woff') format('woff'),
-             url($f-url + $f-name + '.ttf') format('truetype'),
-             url($f-url + $f-name + '.eot') format('eot');
+             //url($f-url + $f-name + '.woff2') format('woff2'),
+             //url($f-url + $f-name + '.woff') format('woff'),
+             url($f-url + $f-name + '.ttf') format('truetype');
+             //url($f-url + $f-name + '.eot') format('eot');
     }
 }
 

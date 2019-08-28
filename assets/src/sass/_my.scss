@@ -339,19 +339,27 @@ header {
             justify-content: space-between;
             margin-top: 91px;
 
-            .active{
-                background-color: $firmColor;
-            }
             .dot{
                 width: 13px;
                 height: 13px;
                 border: 1px solid $firmColor;
                 border-radius: 50px;
                 cursor: pointer;
+
+                &:nth-child(1){
+                    background-color: $firmColor;
+                }
             }
         }
     }
 
+    .slide{
+        display: none;
+
+        &:nth-child(1){
+            display: block;
+        }
+    }
     .slider-name{
         font-family: HelveticaMedium;
         font-size: 26px;
