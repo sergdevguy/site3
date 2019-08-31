@@ -750,8 +750,10 @@ header {
         background-image: url("../img/form-bg.png");
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: contain;
+        background-size: 100% 100%;
         padding: 40px 50px;
+        width: 100%;
+        max-width: 517px;
     }
 
     .main-form{
@@ -760,7 +762,6 @@ header {
         justify-content: center;
         align-items: center;
         padding: 40px 25px 65px;
-        max-width: 516px;
         background-color: #fff;
         width: 100%;
 
@@ -807,6 +808,55 @@ header {
         }
     }
 
+}
+@media(max-width: 414px){
+    .cost{
+        .section-header{
+            margin-top: 0;
+            font-size: 30px;
+            line-height: 30px;
+
+            .price{
+                font-size: 30px;
+            }
+        }
+        .info{
+            font-size: 14px;
+            line-height: 20px;
+            margin-top: 10px;
+        }
+        .form-block{
+            padding: 8% 6%;
+        }
+        .main-form{
+            padding: 20px 15px 30px;
+
+            .form-header{
+                font-size: 14px;
+            }
+            .form-header-info{
+                font-size: 8px;
+                margin-bottom: 20px;
+            }
+            input{
+                padding-bottom: 8px;
+                font-size: 8px;
+
+                &::placeholder{
+                    font-size: 8px;
+                }
+
+                &:nth-child(2){
+                    margin-top: 32px;
+                }
+
+                &:nth-child(3){
+                    margin-top: 24px;
+                    margin-bottom: 25px;
+                }
+            }
+        }
+    }
 }
 
 
@@ -883,5 +933,10 @@ footer{
     }
     .path-text{
         font-family: HelveticaLight;
+    }
+}
+@include media-breakpoint-down(md) {
+    .img-container{
+        display: none;
     }
 }
