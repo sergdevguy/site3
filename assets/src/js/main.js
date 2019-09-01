@@ -11532,4 +11532,66 @@ $( document ).ready(function() {
 
 
 
+    //
+    //
+    // КНОПКИ СКРЫТИЯ/РАСКРЫТИЯ В ФУТЕРЕ
+    //
+    //
+
+
+    // Если юзер кликнул на текст/карту - раскрыл или скрыл его, то перестаем
+    // сами управлять их видимостью
+    var userClickText = false;
+
+    // Скрываем и показываем текст и карту на маленьких дисплеях
+    $( "footer .path1" ).click(function() {
+        if($(window).width() <= 414){
+            userClickText = true;
+            $( "footer .path-text" ).slideToggle( "slow", function() {
+                // Animation complete.
+            });
+        }
+    });
+    $( "footer .path2" ).click(function() {
+        if($(window).width() <= 414){
+            $( "footer .small-map" ).slideToggle( "slow", function() {
+                // Animation complete.
+            });
+        }
+    });
+
+    // Скрываем и показвыаем текст при изменении размера экрана
+    $(window).resize(function(){
+        var w = $(window).width();
+        if(w > 414 && $(".path-text").css("display") == "none") {
+            $("footer .path-text").css("display", "block");
+        }
+        if(w > 991 && $(".small-map").css("display") == "block") {
+            $("footer .small-map").css("display", "none");
+        } else if(w > 414 && w <= 991 && $(".small-map").css("display") == "none") {
+            $("footer .small-map").css("display", "block");
+        }
+    });
+
+    /*$(window).resize(function(){
+        var w = $(window).width();
+        // исправили текст
+        if(w > 414 && $(".path-text").css("display") == "none") {
+            $("footer .path-text").css("display", "block");
+        } else if(userClickText == false && w <= 414 && $(".path-text").css("display") == "block"){
+            $("footer .path-text").css("display", "none");
+        }
+
+        if(w > 414 && w <= 991 && $(".small-map").css("display") == "none") {
+            $("footer .small-map").css("display", "block");
+        } else if(w > 991 && $(".small-map").css("display") == "block") {
+            $("footer .small-map").css("display", "none");
+        } else if(w <= 414 && $(".small-map").css("display") == "block") {
+            $("footer .small-map").css("display", "none");
+        }
+    });*/
+
+
+
+
 });

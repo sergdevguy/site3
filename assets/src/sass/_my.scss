@@ -888,6 +888,10 @@ footer{
     .main-contacts{
         font-family: HelveticaLight;
         font-size: 18px;
+
+        .hide-text{
+            display: inline-block;
+        }
     }
     .main-contacts li{
         display: block;
@@ -916,6 +920,7 @@ footer{
     }
     .footer-icons{
         margin-top: 40px;
+        width: 100%;
         
         .icon-circle{
             background-color: $firmColor3;
@@ -934,9 +939,70 @@ footer{
     .path-text{
         font-family: HelveticaLight;
     }
+    .path-map{
+        display: none;
+    }
+
+    .small-map{
+        width: 100%;
+        display: none;
+    }
 }
 @include media-breakpoint-down(md) {
-    .img-container{
-        display: none;
+    footer{
+        .img-container{
+            display: none;
+        }
+        .small-map{
+            max-width: 70%;
+            margin-top: 30px;
+            display: block;
+        }
+    }
+}
+@media(max-width: 414px){
+    footer{
+        .small-map{
+            display: none;
+            margin-top: 0;
+        }
+        .section-header{
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+        .main-contacts{
+            font-size: 16px;
+            width: 100%;
+
+            li{
+                max-width: 239px;
+            }
+
+            .hide-text{
+                display: none;
+            }
+        }
+        .footer-icons{
+            margin-top: 20px;
+        }
+        .path-header{
+            font-size: 14px;
+            color: $firmColor3;
+            text-decoration: underline;
+            margin-bottom: 0;
+            cursor: pointer;
+        }
+        .path2{
+            margin-bottom: 10px;
+        }
+        .path-text{
+            display: none;
+            margin-bottom: 10px;
+        }
+        .path-map{
+            display: block;
+            width: 100%;
+            margin-top: 0;
+        }
     }
 }

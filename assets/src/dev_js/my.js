@@ -82,4 +82,52 @@ $( document ).ready(function() {
 
 
 
+    //
+    //
+    // КНОПКИ СКРЫТИЯ/РАСКРЫТИЯ В ФУТЕРЕ
+    //
+    //
+
+
+    // Если юзер кликнул на текст/карту - раскрыл или скрыл его, то перестаем
+    // сами управлять их видимостью
+    var userClickText = false;
+
+    // Скрываем и показываем текст и карту на маленьких дисплеях
+    $( "footer .path1" ).click(function() {
+        if($(window).width() <= 414){
+            userClickText = true;
+            $( "footer .path-text" ).slideToggle( "slow", function() {
+                // Animation complete.
+            });
+        }
+    });
+    $( "footer .path2" ).click(function() {
+        if($(window).width() <= 414){
+            $( "footer .small-map" ).slideToggle( "slow", function() {
+                // Animation complete.
+            });
+        }
+    });
+
+    // Скрываем и показвыаем текст при изменении размера экрана
+    $(window).resize(function(){
+        var w = $(window).width();
+        // показываем текст на больших дисплеях, даже если на маленьком его скрыли
+        if(w > 414 && $(".path-text").css("display") == "none") {
+            $("footer .path-text").css("display", "block");
+        }
+        // скрываем маленькую карту на самых больших дисплеях
+        if(w > 991 && $(".small-map").css("display") == "block") {
+            $("footer .small-map").css("display", "none");
+        }
+        // показываем маленькую карту на больших дисплеях, даже если на маленьких её скрыли
+        if(w > 414 && w <= 991 && $(".small-map").css("display") == "none") {
+            $("footer .small-map").css("display", "block");
+        }
+    });
+
+
+
+
 });
