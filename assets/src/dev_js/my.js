@@ -130,4 +130,46 @@ $( document ).ready(function() {
 
 
 
+    //
+    //
+    // КНОПКА ПЕРЕЛИСТЫВАНИЯ КОММЕНТАРИЯ 
+    //
+    //
+
+    var slidesSum = $(".container .text-block").length;
+    var nextSlide = 1;
+
+    $( ".comments .small-button" ).click(function() {
+        $( ".comments .slide-container .text-block:nth-child(" + nextSlide + ")" ).animate({
+            left: "-=150",
+            opacity: 0
+        }, 700, function() {
+            $( ".comments .slide-container .text-block:nth-child(" + nextSlide + ")" ).css("display", "none");
+            if(nextSlide < slidesSum){
+                nextSlide += 1;
+            } else{
+                nextSlide = 1;
+            }
+            $( ".comments .slide-container .text-block:nth-child(" + nextSlide + "), .comments .comment-img" ).css({"display": "block", "opacity": "1", "left": "0px"});
+            $( ".comments .comment-img" ).attr("src", "img/comments-img" + nextSlide + ".jpg");
+        });
+    });
+
+
+
+
+    //
+    //
+    // ОБРЕЗАЕМ КОММЕНТАРИЙ, ЕСЛИ ОН ДЛИННЫЙ 
+    //
+    //
+
+
+    var txt = $(" .comments .slide-container .text").text();
+    txt = txt.slice(1, 200);
+    console.log(txt);
+
+
+
+
 });

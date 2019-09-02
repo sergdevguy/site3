@@ -11563,33 +11563,61 @@ $( document ).ready(function() {
     // Скрываем и показвыаем текст при изменении размера экрана
     $(window).resize(function(){
         var w = $(window).width();
+        // показываем текст на больших дисплеях, даже если на маленьком его скрыли
         if(w > 414 && $(".path-text").css("display") == "none") {
             $("footer .path-text").css("display", "block");
         }
+        // скрываем маленькую карту на самых больших дисплеях
         if(w > 991 && $(".small-map").css("display") == "block") {
             $("footer .small-map").css("display", "none");
-        } else if(w > 414 && w <= 991 && $(".small-map").css("display") == "none") {
+        }
+        // показываем маленькую карту на больших дисплеях, даже если на маленьких её скрыли
+        if(w > 414 && w <= 991 && $(".small-map").css("display") == "none") {
             $("footer .small-map").css("display", "block");
         }
     });
 
-    /*$(window).resize(function(){
-        var w = $(window).width();
-        // исправили текст
-        if(w > 414 && $(".path-text").css("display") == "none") {
-            $("footer .path-text").css("display", "block");
-        } else if(userClickText == false && w <= 414 && $(".path-text").css("display") == "block"){
-            $("footer .path-text").css("display", "none");
-        }
 
-        if(w > 414 && w <= 991 && $(".small-map").css("display") == "none") {
-            $("footer .small-map").css("display", "block");
-        } else if(w > 991 && $(".small-map").css("display") == "block") {
-            $("footer .small-map").css("display", "none");
-        } else if(w <= 414 && $(".small-map").css("display") == "block") {
-            $("footer .small-map").css("display", "none");
-        }
-    });*/
+
+
+    //
+    //
+    // КНОПКА ПЕРЕЛИСТЫВАНИЯ КОММЕНТАРИЯ 
+    //
+    //
+
+    var slidesSum = $(".container .text-block").length;
+    var nextSlide = 1;
+
+    $( ".comments .small-button" ).click(function() {
+        $( ".comments .slide-container .text-block:nth-child(" + nextSlide + ")" ).animate({
+            left: "-=150",
+            opacity: 0
+        }, 700, function() {
+            $( ".comments .slide-container .text-block:nth-child(" + nextSlide + ")" ).css("display", "none");
+            if(nextSlide < slidesSum){
+                nextSlide += 1;
+            } else{
+                nextSlide = 1;
+            }
+            $( ".comments .slide-container .text-block:nth-child(" + nextSlide + "), .comments .comment-img" ).css({"display": "block", "opacity": "1", "left": "0px"});
+            $( ".comments .comment-img" ).attr("src", "img/comments-img" + nextSlide + ".jpg");
+        });
+    });
+
+
+
+
+    //
+    //
+    // ОБРЕЗАЕМ КОММЕНТАРИЙ, ЕСЛИ ОН ДЛИННЫЙ 
+    //
+    //
+
+
+    var txt = $(" .comments .slide-container .text").text();
+    txt = txt.slice(1, 200);
+    console.log(txt);
 
 
 

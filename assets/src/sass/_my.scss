@@ -616,6 +616,25 @@ header {
             top: 100px;
             left: 70%;
         }
+        .bg-img-3{
+            right: 0;
+            top: 900px;
+            width: 300px;
+        }
+        .bg-img-4{
+            top: 710px;
+            left: auto;
+            right: 60%;
+            width: 300px;
+        }
+        .bg-img-5{
+            right: 0;
+            top: 1630px;
+        }
+        .bg-img-6{
+            left: 0;
+            top: 1390px;
+        }
     }
     .youLearn{
         .blockHalf{
@@ -644,6 +663,27 @@ header {
             top: 40px;
             right: 40%;
         }
+        .bg-img-3{
+            right: -10px;
+            top: 480px;
+            width: 180px;
+        }
+        .bg-img-4{
+            top: 370px;
+            left: auto;
+            right: 60%;
+            width: 200px;
+        }
+        .bg-img-5{
+            right: 0;
+            width: 100px;
+            top: 930px;
+        }
+        .bg-img-6{
+            left: -20px;
+            top: 840px;
+            width: 100px;
+        }
     }
     .youLearn{
         .blockHalf{
@@ -666,13 +706,32 @@ header {
 
 .comments{
     position: relative;
+    overflow: hidden;
 
     .section-header-full{
         margin-bottom: 40px;
     }
 
-    img{
+    .comment-img{
         padding-right: 37px;
+    }
+
+    .comment-block{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+    }
+    .slide-container{
+        position: relative;
+
+        .text-block{
+            position: relative;
+            left: 0px;
+        }
+        .text-block:nth-child(2){
+            display: none;
+        }
     }
 
     .name{
@@ -687,11 +746,11 @@ header {
         line-height: 24px;
     }
     .button-line{
-        position: absolute;
-        bottom: 0;
-        right: 15px;
+        margin-top: 30px;
+        width: 100%;
         display: flex;
         align-items: center;
+        justify-content: flex-end;
 
         p,button{
             display: inline-block;
@@ -700,24 +759,64 @@ header {
             font-size: 16px;
             color: #9d9999;
         }
-
+    }
+    .img-section{
         .small-button{
-            background-image: url("../img/small_button_bg_small.png");
-            background-color: rgba(255, 255, 255, 0);
-            background-repeat: no-repeat;
-            width: 54px;
-            height: 50px;
-            border: none;
-            margin-left: 22px;
-
-            &:hover{
-                background-position: right 0;
-            }
-
-            img{
-                padding-right: 0;
-            }
+            display: none;
         }
+    }
+    .small-button{
+        background-image: url("../img/small_button_bg_small.png");
+        background-color: rgba(255, 255, 255, 0);
+        background-repeat: no-repeat;
+        width: 54px;
+        height: 50px;
+        border: none;
+        margin-left: 22px;
+
+        &:hover{
+            background-position: right 0;
+        }
+
+        img{
+            padding-right: 0;
+        }
+    }
+}
+@include media-breakpoint-down(md) {
+    .comments{
+        .comment-img{
+            margin: 0 auto;
+            display: block;
+            padding-right: 0;
+            margin-bottom: 40px;
+        }
+    }
+}
+@media(max-width: 414px){
+    .comments .img-section .small-button{
+        display: block;
+        position: absolute;
+        top: 35%;
+        right: 4%;
+    }
+    .comments .name{
+        font-size: 14px;
+        text-align: center;
+    }
+    .comments .text{
+        font-size: 12px;
+        line-height: normal;
+        text-align: center;
+    }
+    .comments{
+        .comment-img{
+            margin-bottom: 20px;
+            max-width: 174px;
+        }
+    }
+    .comments .button-line{
+        display: none;
     }
 }
 
