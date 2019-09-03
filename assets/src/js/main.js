@@ -11588,12 +11588,12 @@ $( document ).ready(function() {
 
 
     // Обрезаем текст в зависимости от размера экрана
-    function sliceComment(text){
+    function sliceComment(text, needSlice){
         // храним text и slisedText отдельно
         var slisedText = text;
         var w = $(window).width();
         // если ширина экрана 414 и меньше то обрезаем текст, иначе нет
-        if(w <= 414){
+        if(w <= 414 && needSlice == true){
             slisedText = text.slice(1, 279);
             slisedText += " ...";
             $(" .comments .slide-container .comment-child").html(slisedText);
@@ -11615,11 +11615,16 @@ $( document ).ready(function() {
     }
 
     // Изначально проверим размер и определим какой текст будет
-    sliceComment(commentTextTemp[nextSlide-1]);
+    sliceComment(commentTextTemp[nextSlide-1], true);
 
     // Теперь проверяем размер экрана и меняем текст, при необходимости
     $(window).resize(function(){
-        sliceComment(commentTextTemp[nextSlide-1]);
+        sliceComment(commentTextTemp[nextSlide-1], true);
+        if($(window).width() <= 414){
+            $('.show-comment').css("display", "block");
+        } else{
+            $('.show-comment').css("display", "none");
+        }
     });
 
     $( ".comments .small-button" ).click(function() {
@@ -11627,15 +11632,31 @@ $( document ).ready(function() {
             left: "-=150",
             opacity: 0
         }, 700, function() {
+            if($(window).width() <= 414){
+                $('.show-comment').css("display", "block");
+            } else{
+                $('.show-comment').css("display", "none");
+            }
             $( ".comments .slide-container .text-block:nth-child(" + nextSlide + ")" ).css("display", "none");
             if(nextSlide < slidesSum){
                 nextSlide += 1;
             } else{
                 nextSlide = 1;
             }
-            sliceComment(commentTextTemp[nextSlide-1]);
+            sliceComment(commentTextTemp[nextSlide-1], true);
             $( ".comments .slide-container .text-block:nth-child(" + nextSlide + "), .comments .comment-img" ).css({"display": "block", "opacity": "1", "left": "0px"});
             $( ".comments .comment-img" ).attr("src", "img/comments-img" + nextSlide + ".jpg");
+        });
+    });
+
+    // На маленьких дисплеях показываем полностью комментарий при нажатии на кнопку
+    $('.show-comment').each(function(index, element){
+        $(element).click(function(){
+
+            // Запускаем функцию меняющую слайд
+            sliceComment(commentTextTemp[nextSlide-1], false);
+            $(element).css("display", "none");
+    
         });
     });
 
