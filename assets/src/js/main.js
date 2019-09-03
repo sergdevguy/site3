@@ -11586,8 +11586,41 @@ $( document ).ready(function() {
     //
     //
 
+
+    // Обрезаем текст в зависимости от размера экрана
+    function sliceComment(text){
+        // храним text и slisedText отдельно
+        var slisedText = text;
+        var w = $(window).width();
+        // если ширина экрана 414 и меньше то обрезаем текст, иначе нет
+        if(w <= 414){
+            slisedText = text.slice(1, 279);
+            slisedText += " ...";
+            $(" .comments .slide-container .comment-child").html(slisedText);
+        } else{
+            $(" .comments .slide-container .comment-child").html(text);
+        }
+    }
+
+    // считаем номер слайда
     var slidesSum = $(".container .text-block").length;
     var nextSlide = 1;
+
+    // Будем хранить здесь все оригиналы комментариев, что бы не обращаться к ним в DOM при каждом клике
+    var commentTextTemp = [];
+
+    // записываем все комментарии в темп - commentTextTemp
+    for(var i = 1; i <= slidesSum; i++){
+        commentTextTemp.push( $(" .comments .slide-container .text-block:nth-child( " + i + " ) .comment-child").html() );
+    }
+
+    // Изначально проверим размер и определим какой текст будет
+    sliceComment(commentTextTemp[nextSlide-1]);
+
+    // Теперь проверяем размер экрана и меняем текст, при необходимости
+    $(window).resize(function(){
+        sliceComment(commentTextTemp[nextSlide-1]);
+    });
 
     $( ".comments .small-button" ).click(function() {
         $( ".comments .slide-container .text-block:nth-child(" + nextSlide + ")" ).animate({
@@ -11600,24 +11633,11 @@ $( document ).ready(function() {
             } else{
                 nextSlide = 1;
             }
+            sliceComment(commentTextTemp[nextSlide-1]);
             $( ".comments .slide-container .text-block:nth-child(" + nextSlide + "), .comments .comment-img" ).css({"display": "block", "opacity": "1", "left": "0px"});
             $( ".comments .comment-img" ).attr("src", "img/comments-img" + nextSlide + ".jpg");
         });
     });
-
-
-
-
-    //
-    //
-    // ОБРЕЗАЕМ КОММЕНТАРИЙ, ЕСЛИ ОН ДЛИННЫЙ 
-    //
-    //
-
-
-    var txt = $(" .comments .slide-container .text").text();
-    txt = txt.slice(1, 200);
-    console.log(txt);
 
 
 
