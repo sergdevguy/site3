@@ -100,6 +100,10 @@ header {
     background-position: center center;
     padding-bottom: 200px;
 
+    .toggle-menu-button{
+        display: none;
+    }
+
     .logo-container{
         position: relative;
         font-family: GeometriaBold;
@@ -155,26 +159,77 @@ header {
     nav{
         display: flex;
         justify-content: space-between;
-        padding: 100px 0;
+        padding-top: 100px;
+        padding-bottom: 100px;
     }
 
     .datail{
+        display: block;
         font-family: HelveticaMedium;
         font-size: 24px;
         color: $firmColor;
-
-        &:before{
-            content: url("../img/check.png");
-            margin-right: 27px;
-            display: inline-block;
+        background-image: url("../img/check.png");
+        background-repeat: no-repeat;
+        padding-left: 67px;
+    }
+}
+@include media-breakpoint-down(md) {
+    header{
+        .main-nav-ul, .icons-nav{
+            display: none;
         }
+    }
+}
+@include media-breakpoint-down(lg) {
+    header .nav-link{
+        margin-right: 25px;
+    }
+    header .main-h{
+        font-size: 60px;
+        line-height: 50px;
     }
 }
 @media(max-width: 576px){
     header{
         .main-h{
-            font-size: 50px;
-            line-height: 40px;
+            font-size: 60px;
+            line-height: 50px;
+        }
+    }
+}
+@media(max-width: 414px){
+    header{
+        padding-bottom: 126px;
+
+        .logo-container .name{
+            font-size: 10px;
+            padding-left: 92px;
+        }
+        nav{
+            padding-top: 47px;
+            padding-bottom: 60px;
+        }
+        .main-h{
+            font-size: 30px;
+            line-height: 30px;
+            margin-top: 0;
+        }
+        .subtitle{
+            font-size: 12px;
+            max-width: 165px;
+            margin-top: 20px;
+        }
+        .big-button{
+            margin-top: 30px;
+            margin-bottom: 35px;
+        }
+        .datail{
+            font-size: 12px;
+            background-size: 5%;
+            padding-left: 25px;
+        }
+        .right-side-col{
+            padding-left: 36px;
         }
     }
 }
