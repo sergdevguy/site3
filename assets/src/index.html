@@ -18,6 +18,7 @@
 
 
         <header>
+            <div class="navigation-animation"></div>
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -27,18 +28,29 @@
                                 <a href="#" class="name">Logo</a>
                             </div>
                             <ul class="main-nav-ul">
-                                <li><a href="#" class="nav-link">О курсе</a></li>
-                                <li><a href="#" class="nav-link">Программа</a></li>
-                                <li><a href="#" class="nav-link">Отзывы</a></li>
-                                <li><a href="#" class="nav-link">Контакты</a></li>
+                                <li><a data-scroll href="#aboutCourse" class="nav-link">О курсе</a></li>
+                                <li><a data-scroll href="#programm"" class="nav-link">Программа</a></li>
+                                <li><a data-scroll href="#comments" class="nav-link">Отзывы</a></li>
+                                <li><a data-scroll href="#contacts" class="nav-link">Контакты</a></li>
                             </ul>
                             <ul class="icons-nav">
-                                <li><a href="" class="icon-circle"><i class="fa fa-vk" aria-hidden="true"></i></a></li>
-                                <li><a href="" class="icon-circle"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="" class="icon-circle"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                <li><a href="" class="icon-circle"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                                <li><a href="https://vk.com/feed" target="_blank" class="icon-circle"><i class="fa fa-vk" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.facebook.com" target="_blank" class="icon-circle"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.instagram.com" target="_blank" class="icon-circle"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.youtube.com" target="_blank" class="icon-circle"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
                             </ul>
-                            <div class="toggle-menu-button"></div>
+                            <div class="toggle-menu-button">
+                                <div class="line"></div>
+                            </div>
+                            <div class="full-screen-field">
+                                <div class="full-screen-circle"></div>
+                                <ul class="nav-min-menu">
+                                    <li><a data-scroll href="#aboutCourse">О курсе</a></li>
+                                    <li><a data-scroll href="#programm">Программа</a></li>
+                                    <li><a data-scroll href="#comments">Отзывы</a></li>
+                                    <li><a data-scroll href="#contacts">Контакты</a></li>
+                                </ul>
+                            </div>
                         </nav>
                     </div>
                 </div>
@@ -101,7 +113,7 @@
 
 
 
-        <div class="container programm section">
+        <div class="container programm section" id="programm">
             <div class="row">
                 <div class="col-md-12">
                     <h3 class="section-header-full">Программа курса</h3>
@@ -215,7 +227,7 @@
             <img class="bg-img bg-img-4" src="img/learn-bg-4_.jpg" alt="">
             <img class="bg-img bg-img-5" src="img/learn-bg-5_.jpg" alt="">
             <img class="bg-img bg-img-6" src="img/learn-bg-6_.png" alt="">
-            <div class="container youLearn section">
+            <div class="container youLearn section" id="aboutCourse">
                 <div class="row">
                     <div class="col-md-12">
                         <h3 class="section-header-full">Вы научитесь</h3>
@@ -261,7 +273,7 @@
 
 
 
-        <div class="container comments section">
+        <div class="container comments section" id="comments">
             <h3 class="section-header-full">Результаты наших учеников</h3>
             <div class="row">
                 <div class="col-lg-6 img-section">
@@ -316,9 +328,9 @@
                                 <div class="form-header">Записаться на курс</div>
                                 <div class="form-header-info">Количество мест ограничено!</div>
                                 <fieldset>
-                                    <input type="text" placeholder="Ваше имя">
+                                    <input type="text" placeholder="Ваше имя" required>
                                     <input type="text" placeholder="Ваш телефон">
-                                    <input type="text" placeholder="Ваш e-mail">
+                                    <input type="email" placeholder="Ваш e-mail" required>
                                 </fieldset>
                                 <button class="big-button">Записаться</button>
                             </form>
@@ -331,7 +343,7 @@
 
 
 
-        <footer>
+        <footer id="contacts">
             <div class="img-container">
                 <img src="img/8_map.jpg" alt="">
             </div>
@@ -340,16 +352,16 @@
                     <div class="col-lg-7 d-flex flex-lg-column flex-wrap">
                         <h3 class="section-header">Контакты</h3>
                         <ul class="main-contacts">
-                            <li><a href="">8 (999) 100 12 34</a></li>
-                            <li><a href="">infomarker@mail.ru</a></li>
+                            <li><a href="tel:89991001234">8 (999) 100 12 34</a></li>
+                            <li><a href="mailto:infomarker@mail.ru">infomarker@mail.ru</a></li>
                             <li>г. Москва, м. Московское, ул. Московская 1А, 3 этаж</li>
                             <li><span class="hide-text">График работы:</span> Пн-Вс с 12.00 до 22.00</li>
                         </ul>
                         <ul class="footer-icons">
-                            <li><a href="" class="icon-circle"><i class="fa fa-vk" aria-hidden="true"></i></a></li>
-                            <li><a href="" class="icon-circle"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="" class="icon-circle"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                            <li><a href="" class="icon-circle"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                            <li><a href="https://vk.com/feed" target="_blank" class="icon-circle"><i class="fa fa-vk" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.facebook.com" target="_blank" class="icon-circle"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.instagram.com" target="_blank" class="icon-circle"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.youtube.com" target="_blank" class="icon-circle"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
                         </ul>
                         <p class="path path1 path-header">Как добраться?</p>
                         <p class="path path-text">Пешком: станция метро Московское, из стеклянных дверей налево. Идти нужно

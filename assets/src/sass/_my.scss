@@ -95,13 +95,100 @@ img{
 
 
 header {
+    position: relative;
     background-image: url("../img/1_bg.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     padding-bottom: 200px;
+    overflow: hidden;
+
+    .full-screen-field{
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+        width: 3000px;
+        height: 3000px;
+    }
+    .full-screen-circle{
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: rgba(126, 84, 176, .95);
+    }
+
+    .nav-min-menu{
+        display: none;
+
+        li{
+            opacity: 0;
+            font-family: HelveticaLight;
+            font-weight: 100;
+            display: block;
+            font-size: 24px;
+            text-align: center;
+            color: #ffffff;
+            margin-top: 25px;
+
+            &:first-child{
+                margin-top: 0;
+            }
+
+            a{
+                color: #ffffff;
+
+                &:hover{
+                    color: $firmColor-hover;
+                }
+            }
+        }
+    }
 
     .toggle-menu-button{
+        position: relative;
+        z-index: 300;
         display: none;
+        width: 63px;
+        height: 60px;
+        background-image: url("../img/small_button_bg_small.png");
+        background-size: cover;
+        align-items: center;
+        justify-content: center;
+        
+        &:hover{
+            background-position: right 0;
+        }
+
+        .line{
+            z-index: 300;
+            position: relative;
+            width: 35px;
+            height: 1px;
+            background-color: #ffffff;
+
+            &:before{
+                content: "";
+                display: block;
+                position: absolute;
+                background-color: #ffffff;
+                height: 1px;
+                width: 35px;
+                top: 7px;
+            }
+
+            &:after{
+                content: "";
+                display: block;
+                position: absolute;
+                background-color: #ffffff;
+                height: 1px;
+                width: 35px;
+                bottom: 7px;
+            }
+        }
     }
 
     .logo-container{
@@ -159,6 +246,7 @@ header {
     nav{
         display: flex;
         justify-content: space-between;
+        align-items: center;
         padding-top: 100px;
         padding-bottom: 100px;
     }
@@ -177,6 +265,9 @@ header {
     header{
         .main-nav-ul, .icons-nav{
             display: none;
+        }
+        .toggle-menu-button{
+            display: flex;
         }
     }
 }
@@ -201,6 +292,54 @@ header {
     header{
         padding-bottom: 126px;
 
+        .toggle-menu-button{
+            width: 43px;
+            height: 40px;
+            background-image: url("../img/small_button_bg_small.png");
+            background-size: cover;
+            align-items: center;
+            justify-content: center;
+            
+            &:hover{
+                background-position: right 0;
+            }
+    
+            .line{
+                position: relative;
+                width: 21px;
+                height: 1px;
+                background-color: #ffffff;
+    
+                &:before{
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    background-color: #ffffff;
+                    height:1px;
+                    width:21px;
+                    top: 4px;
+                }
+    
+                &:after{
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    background-color: #ffffff;
+                    height:1px;
+                    width:21px;
+                    bottom: 4px;
+                }
+            }
+        }
+
+        .logo-container .bg{
+            position: absolute;
+            top: -6px;
+            left: -65px;
+            display: block;
+            width: 170%;
+        }
+
         .logo-container .name{
             font-size: 10px;
             padding-left: 92px;
@@ -218,6 +357,7 @@ header {
             font-size: 12px;
             max-width: 165px;
             margin-top: 20px;
+            line-height: 14px;
         }
         .big-button{
             margin-top: 30px;

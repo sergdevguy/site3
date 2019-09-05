@@ -213,4 +213,94 @@ $( document ).ready(function() {
 
 
 
+    //
+    //
+    // КНОПКА ГЛАВНОЙ НАВИГАЦИИ
+    //
+    //
+
+
+    // Распологаем огромный блок по центру относительно кнопки меню
+    /*$(".full-screen-field").css({
+        "left": $(".toggle-menu-button").offset().left + $(".toggle-menu-button").width() / 2 - 1500, 
+        "top": $(".toggle-menu-button").offset().top + $(".toggle-menu-button").height() / 2 - 1500
+    });*/
+
+    // Увеличиваем круг. Флекс бокс держит его по центру и круг спокойно увеличивается
+    var toggleMenuMainMin = false;
+    $( ".toggle-menu-button" ).click(function() {
+
+        if(toggleMenuMainMin == false){
+
+            toggleMenuMainMin = true;
+
+            $(".full-screen-field").css({
+                "left": $(".toggle-menu-button").offset().left + $(".toggle-menu-button").width() / 2 - 1500, 
+                "top": $(".toggle-menu-button").offset().top + $(".toggle-menu-button").height() / 2 - 1500,
+                "opacity": "1"
+            });
+
+            $(".full-screen-field").css("display", "flex");
+            $( ".full-screen-circle" ).animate({
+                width: 2700,
+                height: 2700
+            }, 1100, function() {
+                $(".full-screen-circle").css("display", "none");
+                $(".full-screen-field").css({"left": "0", "top": "0", "width": "100%", "height": "100%", "background-color": "rgba(126, 84, 176, .95)", "opacity": "1"});
+                $(".nav-min-menu").css("display", "block");
+
+                // По очереди задаем анимацию пунктам меню
+                var timerTickSum = $(".nav-min-menu li").length;
+                var timerTick = 1;
+                $(".nav-min-menu li:nth-child(" + timerTick + ")").addClass('animated fadeInLeft');
+                setInterval(function(){
+                    if(timerTick < timerTickSum){
+                        timerTick++;
+                        $(".nav-min-menu li:nth-child(" + timerTick + ")").addClass('animated fadeInLeft');
+                    } else{
+                        timerTick = 1;
+                        timerTickSum = 1;
+                    }
+                }, 200);
+            });
+
+        } else {
+            toggleMenuMainMin = false;
+
+            $( ".full-screen-field" ).animate({
+                opacity: 0
+            }, 300, function() {
+                $(".full-screen-field").css({"display": "none", "width":"3000", "height": "3000", "background-color": "rgba(255, 255, 255, 0)"});
+                $(".nav-min-menu li").removeClass("animated fadeInLeft");
+                $( ".full-screen-circle" ).css({"display":"block", "width": "25", "height": "25"});
+                $(".nav-min-menu").css("display", "none");
+            });
+        }
+
+    });
+
+    // Нажатие на ссыку так же выключает меню и сбрасывает все настройки
+    $(".nav-min-menu li a").click(function(){
+        toggleMenuMainMin = false;
+
+        $( ".full-screen-field" ).animate({
+            opacity: 0
+        }, 300, function() {
+            $(".full-screen-field").css({"display": "none", "width":"3000", "height": "3000", "background-color": "rgba(255, 255, 255, 0)"});
+            $(".nav-min-menu li").removeClass("animated fadeInLeft");
+            $( ".full-screen-circle" ).css({"display":"block", "width": "25", "height": "25"});
+            $(".nav-min-menu").css("display", "none");
+        });
+    });
+
+
+
+
+    // Анимация smooth-scroll
+    // All animations will take exactly 500ms
+    var scroll = new SmoothScroll('a[href*="#"]', {
+        speed: 500,
+        speedAsDuration: true
+    });
+
 });
