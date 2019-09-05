@@ -303,4 +303,18 @@ $( document ).ready(function() {
         speedAsDuration: true
     });
 
+
+
+
+    //
+    //
+    // БОЛЬШАЯ КНОПКА, ОТКРЫВАЮЩАЯ ФОРМУ
+    //
+    //
+
+
+    $(".button-open-form").click(function(){
+        $(".cost-form").css("display", "flex");
+    });
+    
 });

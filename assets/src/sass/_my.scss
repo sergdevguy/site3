@@ -1325,3 +1325,124 @@ footer{
         }
     }
 }
+
+
+
+
+.cost-form{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 600;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(158, 177, 207, .5);
+
+    .form-block{
+        padding: 20px 17px 20px 20px;
+        background-image: url(../img/form-bg2.png);
+        background-position: center center;
+    }
+}
+@media(max-width: 1200px){
+    .cost-form{
+        .section-header{
+            margin-top: 0;
+            font-size: 30px;
+            line-height: 30px;
+
+            .price{
+                font-size: 30px;
+            }
+        }
+        .info{
+            font-size: 14px;
+            line-height: 20px;
+            margin-top: 10px;
+        }
+        .form-block{
+            padding: 30px 35px 30px 40px;
+        }
+        .main-form{
+            padding: 20px 15px 30px;
+
+            .form-header{
+                font-size: 22px;
+            }
+            .form-header-info{
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+            input{
+                padding-bottom: 8px;
+                font-size: 12px;
+
+                &::placeholder{
+                    font-size: 12px;
+                }
+
+                &:nth-child(2){
+                    margin-top: 32px;
+                }
+
+                &:nth-child(3){
+                    margin-top: 24px;
+                    margin-bottom: 25px;
+                }
+            }
+        }
+    }
+}
+@media(max-width: 414px){
+    .cost-form{
+        .section-header{
+            margin-top: 0;
+            font-size: 30px;
+            line-height: 30px;
+
+            .price{
+                font-size: 30px;
+            }
+        }
+        .info{
+            font-size: 14px;
+            line-height: 20px;
+            margin-top: 10px;
+        }
+        .form-block{
+            max-width: 260px;
+            padding: 20px 18px 22px 22px;
+        }
+        .main-form{
+            padding: 20px 15px 30px;
+
+            .form-header{
+                font-size: 14px;
+            }
+            .form-header-info{
+                font-size: 8px;
+                margin-bottom: 20px;
+            }
+            input{
+                padding-bottom: 8px;
+                font-size: 8px;
+
+                &::placeholder{
+                    font-size: 8px;
+                }
+
+                &:nth-child(2){
+                    margin-top: 32px;
+                }
+
+                &:nth-child(3){
+                    margin-top: 24px;
+                    margin-bottom: 25px;
+                }
+            }
+        }
+    }
+}
