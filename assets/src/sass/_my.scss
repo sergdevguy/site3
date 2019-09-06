@@ -1191,6 +1191,25 @@ footer{
     position: relative;
     overflow: hidden;
 
+    .footer-author{
+        font-size: 14px;
+        width: 100%;
+        font-family: HelveticaMedium;
+        text-align: center;
+        display: block;
+        background-color: $firmColor-bg;
+        padding: 20px 0 20px 0;
+        position: relative;
+        color: $firmColor3;
+
+        .author-link{
+            display: inline-block;
+            font-size: 19px;
+            background-color: $firmColor3;
+            margin-left: 10px;
+        }
+    }
+
     .img-container{
         position: relative;
 
