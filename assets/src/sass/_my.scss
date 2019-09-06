@@ -778,7 +778,13 @@ header {
     }
     .big-arrow{
         margin-right: 128px;
+        animation: mobeArrow 3s infinite ease-in-out;
     }
+}
+@keyframes mobeArrow {
+    0% {margin-right: 128px;}
+    50% {margin-right: 40px;}
+    100% {margin-right: 128px;}
 }
 @media(max-width: 1199px){
     .youLearn{
@@ -1340,14 +1346,30 @@ footer{
     justify-content: center;
     align-items: center;
     background-color: rgba(158, 177, 207, .5);
+    opacity: 0;
+
+    .main-form{
+        position: relative;
+        z-index: 700;
+    }
+
+    .bg-button{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 500;
+    }
 
     .form-block{
         padding: 20px 17px 20px 20px;
         background-image: url(../img/form-bg2.png);
         background-position: center center;
+        z-index: 700;
     }
 }
-@media(max-width: 1200px){
+@media(max-width: 2200px){
     .cost-form{
         .section-header{
             margin-top: 0;

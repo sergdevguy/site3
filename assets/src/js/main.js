@@ -12291,6 +12291,11 @@ $( document ).ready(function() {
             $( ".comments .slide-container .text-block:nth-child(" + nextSlide + "), .comments .comment-img" ).css({"display": "block", "opacity": "1", "left": "0px"});
             $( ".comments .comment-img" ).attr("src", "img/comments-img" + nextSlide + ".jpg");
         });
+        $( ".comments .comment-img" ).animate({
+            opacity: 0
+        }, 700, function() {
+            $( ".comments .comment-img" ).css("opacity", "1");
+        });
     });
 
     // На маленьких дисплеях показываем полностью комментарий при нажатии на кнопку
@@ -12313,12 +12318,6 @@ $( document ).ready(function() {
     //
     //
 
-
-    // Распологаем огромный блок по центру относительно кнопки меню
-    /*$(".full-screen-field").css({
-        "left": $(".toggle-menu-button").offset().left + $(".toggle-menu-button").width() / 2 - 1500, 
-        "top": $(".toggle-menu-button").offset().top + $(".toggle-menu-button").height() / 2 - 1500
-    });*/
 
     // Увеличиваем круг. Флекс бокс держит его по центру и круг спокойно увеличивается
     var toggleMenuMainMin = false;
@@ -12409,6 +12408,20 @@ $( document ).ready(function() {
 
     $(".button-open-form").click(function(){
         $(".cost-form").css("display", "flex");
+
+        $( ".cost-form" ).animate({
+            opacity: 1
+        }, 400, function() {
+            
+        });
+    });
+
+    $(".bg-button").click(function(){
+        $( ".cost-form" ).animate({
+            opacity: 0
+        }, 400, function() {
+            $(".cost-form").css("display", "none");
+        });
     });
     
 });
